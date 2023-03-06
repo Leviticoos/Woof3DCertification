@@ -1,0 +1,33 @@
+<html>
+<head>
+<title>
+Woof 3D Printing Certificaiton Program
+</title>
+</head>
+<h1>
+STL Files
+</h1>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+<address>
+<a href="../../index.html">Back To Homepage</a>
+</address><address>
+<a href="../Beginner.html">Back to Beginner Page</a>
+</address>
+
+    <p>
+        STL files may seem scary at first, but a very simple understanding of them can go a long way to helping you troubleshoot 3D prints. STL, or Standard Tessellation Language, files are nothing more than lists of triangles in 3D space, with a labeled outer side and inner side. If you’ve ever been told ‘3D video game shapes are just a bunch of polygons,’ that is exactly what is going on with STL files too! 
+
+    </p><p>
+        You can get stl files either off of the internet or from a CAD program. To get an STL from a CAD file, open the model you want to print, and navigate to file > export or file > export as. Simply selecting the stl option for what format to export will get you a shiny new stl file! Often, you can also mess with resolution settings, which hopefully make some sense given the file will be a bunch of triangles.
+
+    </p><p>
+        The final thing to know is the inside/outside sides of these triangles. While you are not expected to know how to fix this, oftentimes slicers will throw errors if the outside is facing in. Basically, the slicer uses the inside direction of these triangles to determine where to put internal supports. You can imagine if the sides are labeled wrong, your slicer may try to infill the whole universe, or more realistically throw an error since it can't build a closed space to infill. This can sometimes be shown as a red shaded triangle on the imported model. 
+    </p><br>
+
+
+    <img src="https://3dstartpoint.com/wp-content/uploads/2017/08/1_STL-files.jpg" alt="A side by side of the STL file and final print of a ring with a wolf head on it. The STL file shows all the triangles used to make up the object and the final print shows how it looks in the real world" style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption>
+        This ring is a great example of both the polygonal  nature of an STL file, and the way it will look after printing. Source,<a href="https://3dstartpoint.com/wp-content/uploads/2017/08/1_STL-files.jpg"> 3dstartpoint.com</a>.
+    </figcaption><br><br>
+
+</html>

@@ -1,18 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+
+<body>
+
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
+
 <h1>
-Basic Slicing
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Basic Slicing
+    </div>
 </h1>
+
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Beginner.html">Back to Beginner Page</a>
-</address>
 
 <h2>Selecting a 3D printer, importing a file, and slicing it.</h2>
     <p>
@@ -84,7 +99,19 @@ Basic Slicing
   </div>
 </div>
 
-
-
 <h3><a href="Files/WOOF3D How to 3D print.pdf"> WOOF3D How To 3D Print </h3>
+
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+
 </html>

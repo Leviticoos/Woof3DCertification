@@ -13,7 +13,11 @@ img {max-width: 100%;
     margin-left: auto;
     margin-right: auto;}
 iframe {display: block; margin-left: auto; margin-right: auto;}
-figcaption {text-align:center; color: #27006f; margin-left:25%; margin-right:25%;}
+figcaption {text-align:center; color: #27006f; margin-left:15%; margin-right:15%;} 
+/* the margins on this make it hard to read on small screens. Remove the margins on small screens.*/
+@media screen and (max-width: 500px) {
+    figcaption {margin-left:0%; margin-right:0%;} 
+}
 blockquote {text-align: justify; color: #27006f;margin: 80px;}
 math {text-align: center; color: #27006f;margin: 80px; font-size:21px;} 
 address {text-align:center;}

@@ -1,19 +1,28 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
 <h1>
-GCODE Startup and Shutdown Scripts
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        GCODE Startup and Shutdown Scripts
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Advanced.html">Back to Advanced Page</a>
-</address>
-
     <p>
         One great option we have in 3D printing is the initialization GCODE, a script that a slicer puts at the start of a .GCODE file to do things like heat up and initialize the printer. One common thing slicers have printers do is put down a layer of filament on one edge of the build plate, to make sure it is extruding and heated properly. This is a setting in cura specific to different printers.
     </p><br>
@@ -25,4 +34,15 @@ GCODE Startup and Shutdown Scripts
         Editing this bit of GCODE is a usefull skill to have, as it can save you headaches if you hate your printers startup routine. While most of the time it should be good enough already, sometimes you'll come across a printer that you don't like how it gets going, or you want to add a specific step.
     </p><br>
     
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 </html>

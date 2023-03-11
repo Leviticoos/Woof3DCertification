@@ -1,18 +1,28 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
 <h1>
-Missing Layers
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Missing Layers
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Beginner.html">Back to Beginner Page</a>
-</address>
 
     <p>
  Some common issues beginners should be able to identify that cause missing layers to a print. Those issues could be poor adhesion, clogged nozzles, or incorrect print settings. Solutions such as checking the bed level, cleaning the nozzle, checking print settings, and adjusting the temperature can help make a successful print.
@@ -24,7 +34,18 @@ Missing Layers
 
     <img src="https://www.hubs.com/talk/uploads/db5060/optimized/2X/7/70402f352938a61f2d93c800e424035dbec17c54_2_375x500.JPG" alt="A finished print with missing layers="display: block; margin-left: auto; margin-right: auto;">
     <figcaption>
-        This print is a great example of a finished print with some missing layers. Source,<a href="https://www.hubs.com/talk/t/3d-prints-missing-layers/7097</a>.
+        This print is a great example of a finished print with some missing layers. Source,<a href="https://www.hubs.com/talk/t/3d-prints-missing-layers/7097"</a>.
     </figcaption><br><br>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 
 </html>

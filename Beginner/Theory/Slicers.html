@@ -1,18 +1,27 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
 <h1>
-Slicers
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Slicers
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Beginner.html">Back to Beginner Page</a>
-</address>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
 
     <p>
         On the road from model to print, the slicer plays an important role. In software, you’ve no doubt learned about how to use a slicer, such as Cura or PrussiaSlicer. But what is it doing? What do the settings mean? What sits within this black box of open source code?
@@ -21,5 +30,17 @@ Slicers
     </p><p>
         Taking all this into account, the slicer spits out a GCODE file, or a list of commands for the printer to follow.  
     </p><br>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 
 </html>

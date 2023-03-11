@@ -1,18 +1,28 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
 <h1>
-Threaded Inserts
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Threaded Inserts
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Intermediate.html">Back to Intermediate Page</a>
-</address>
 
     <p>
         While I attempted to give a brief summary in the following paragraph, please read <a href="https://hackaday.com/2019/02/28/threading-3d-printed-parts-how-to-use-heat-set-inserts/ ">this amazing article</a> for actual learning. It gives much more and better detail on the subject.
@@ -21,5 +31,17 @@ Threaded Inserts
     <p>
         You put in threaded inserts because they are a mass-produced option, having already found mass production for injection molded parts, and can provide a great interface between print and real applications. However, while designing, you should keep in mind that this method melts and reshapes plastic, so you want to make the hole smaller than the insert so it’ll cool snuggly against it. You’ll also want a slight taper, so insert both self-centers and pushes any extra material downward. That combined with making the hole longer (in height not diameter) than the insert means any extra material is collected under the insert
     </p><br>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 
 </html>

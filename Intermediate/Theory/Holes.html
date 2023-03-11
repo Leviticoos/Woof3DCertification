@@ -1,18 +1,28 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
 <h1>
-Holes
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Holes
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Intermediate.html">Back to Intermediate Page</a>
-</address>
 
     <p>
         Holes are a complex thing in 3D printing. Geometrically speaking, they have every angle of overhang. As a manufacturing technique, it is best to start thinking of a 3D-printed part as an approximation of the original design, not a replica. As such, we have some shapes that are easier to print than a hole and are somewhat good approximations of circles. Depending on your post-processing, you might even just drill out the hole afterward!
@@ -31,4 +41,16 @@ Holes
     </figcaption><br><br><br><br><br><br><br><br>
 
     <img src="Photos/Shia.jpg" alt="Who are these ragtag boys standing around a hole? Is that shia lebeef from transformers?" style="display: block; margin-left: auto; margin-right: auto;" width=50px height=30px>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+    
 </html>

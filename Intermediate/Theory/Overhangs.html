@@ -1,19 +1,29 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
-<h1>
-Overhangs
-</h1>
-<link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Intermediate.html">Back to Intermediate Page</a>
-</address>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
 
+<h1>
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Overhangs
+    </div>
+</h1>
+
+<link href="../../style.css" rel="stylesheet" type="text/css">
     <p>
         Overhangs happen when a layer extends over the previous layer and thus is unsupported. 
     </p><p>
@@ -25,5 +35,17 @@ Overhangs
     <figcaption>
         A great show of how overhangs get progressivly more dificult to print. Note that even as an overhang might not make a print fail, it may produce less than perfect prints. Source,<a href="https://all3dp.com/2/3d-printing-overhang-how-to-master-overhangs-exceeding-45/"> all3dp.com</a>.
     </figcaption><br><br>
+
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 
 </html>

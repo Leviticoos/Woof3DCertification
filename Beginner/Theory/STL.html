@@ -1,18 +1,28 @@
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>
 Woof 3D Printing Certificaiton Program
 </title>
 </head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
 <h1>
-STL Files
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        STL Files
+    </div>
 </h1>
 <link href="../../style.css" rel="stylesheet" type="text/css">
-<address>
-<a href="../../index.html">Back To Homepage</a>
-</address><address>
-<a href="../Beginner.html">Back to Beginner Page</a>
-</address>
 
     <p>
         STL files may seem scary at first, but a very simple understanding of them can go a long way to helping you troubleshoot 3D prints. STL, or Standard Tessellation Language, files are nothing more than lists of triangles in 3D space, with a labeled outer side and inner side. If you’ve ever been told ‘3D video game shapes are just a bunch of polygons,’ that is exactly what is going on with STL files too! 
@@ -29,5 +39,15 @@ STL Files
     <figcaption>
         This ring is a great example of both the polygonal  nature of an STL file, and the way it will look after printing. Source,<a href="https://3dstartpoint.com/wp-content/uploads/2017/08/1_STL-files.jpg"> 3dstartpoint.com</a>.
     </figcaption><br><br>
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
 
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
 </html>

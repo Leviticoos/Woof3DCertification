@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+Woof 3D Printing Certificaiton Program
+</title>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
+<h1>
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        Slicing Tolerance
+    </div>
+</h1>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+    <p>
+        One of the lesser known, yet extremely powerful settings at your disposal is that of the Slicing Tolerance. When you take a 2D slice of your STL, you really have a difference between the top of that layer and the bottom of it. The slicer can decide to fill that whole area, with a little bit of material going outside that bound, try to reduce the error, by having it print most of the inbounds, but leaving some areas unprinted to keep from spilling out of bounds too much, or do it’s est to never cross that boundary. These options are called Inclusive, Middle, and Exclusive in most slicers, and are pictured below.
+    </p><br>
+    <img src="https://i.all3dp.com/workers/images/fit=cover,w=1000,gravity=0.5x0.5,format=auto/wp-content/uploads/2022/11/23174027/the-slicing-tolerance-setting-can-single-handedly-ultimaker-221118_download.jpg" alt="Three images that show the grey outline of an STL, from the side so it's a simple triangle. The left one is labled 'inclusive', and has some plastic printed outside the grey area, so that all the grey is covered. In the middle is a photo labled 'middle', with the plastic lining up near the edge, so that not much plastic is outside the grey, but it's not a crazy amount, and same with the uncovered grey area. The right photo is labled 'exclusive', and has plastic only in the grey area, even if there is a bit of grey still uncovered." style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption>
+        Burn this photo into your mind, see it when you close your eyes! Just knowing what this simple setting does takes you leauges above most 3D printers! Source is <a href="https://all3dp.com/2/3d-printer-dimensional-accuracy/">the great all3dp.com</a>!
+    </figcaption>
+    <br><p>
+        This setting comes in extremely handy when making parts that have to mate, especially when you want to print high tolerance alignment in place. The exclusive mode makes sure that any error in the model to print process is with empty space, not extrusion outside the bounds that can lead to interference between parts.
+    </p><br>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>

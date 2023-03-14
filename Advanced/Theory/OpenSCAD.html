@@ -1,0 +1,118 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>
+Woof 3D Printing Certificaiton Program
+</title>
+</head>
+<body>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="../../index.html">Homepage</a>
+  <a href="../../Beginner/Beginner.html">Beginner</a>
+  <a href="../../Intermediate/Intermediate.html">Intermediate</a>
+  <a href="../../Advanced/Advanced.html">Advanced</a>
+</div>
+
+<h1>
+    <div class="sidebarh1" onclick="openNav()">
+        &#9776;
+    </div>
+    <div>
+        OpenSCAD
+    </div>
+</h1>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+    <p>
+        Modeling is an often overlooked part of 3D Printing, but it shouldn't be neglected as part of the process in its own right. Often, you'll have a pre-existing model you want, or a customer wants, to be made physical. But often, you'll set out to design a part with the strengths and weaknesses of a printer in mind.
+    </p>
+    <p>
+        One of these strengths is the flexibility of a printer. It is easy to make tight corners and wild shapes that are not so easy on, say a CNC mill. It is also easy to make a tweakable design that you can change to fit your needs every time you print it, unlike injection molding. When running a workflow with this kind of mathematical modularity, OpenSCAD can be a powerful tool on your belt.
+    </p>
+    <p>
+        OpenSCAD is a programming based CAD software. Instead of sketching and dimensioning, you write scripts that generate points. This allows for things like for loops, and variables to define dimensions. This makes openSCAD a way to make, say, an array of holes to hold batteries, in which you can set how many holes along each dimension to make. Or, say you want an object with a side profile of sin(x)*x. You can make trapezoids with a small delta x, and iterate to make a great approximation of that side profile. While these types of applications are not needed for every project, they, in conjunction with 3D printing, provide an astoundingly strong prototyping and manufacturing process, and it takes full advantage of 3D printing's strengths. 
+    </p>
+    <p>
+        One need not know OpenSCAD fluently (they have documentation and a <a href="https://openscad.org/cheatsheet/">very useful cheat sheet</a>), but knowledge of its existence can be invaluable when approaching a problem, and takes you from knowing how to print to knowing how and when 3D printing really provides an advantage over traditional manufacturing.
+    </p><br>
+    <img src="Photos/OpenSCADCorral.png" alt="A yellow dish with a bottom surface defined by an inverse exponential function, as a function of radius from the center." style="display: block; margin-left: auto; margin-right: auto;">
+    <figcaption>
+        An example of an OpenSCAD model I made, where I wanted the bottom of this dish to be a specific function (30/r, if you were curious). Picture is from Author's own research.
+    </figcaption>
+    <br>
+    <code>
+        //import base Corral (A) <br>
+        rotate([90,0,0]) import("C:/Users/LeviR/OneDrive/Desktop/PWH/PWH machine/Type A Coral/Blank Corral Hollow(A).stl");<br>
+        rotate_extrude(angle = 360, convexity = 2);<br>
+        //6mm up is the dish bottom<br>
+        //constants, units in mm<br>
+        delta_1 = .5;<br>
+        delta_2 = .5;<br>
+        delta_switch = 8;<br> 
+        cutoff = 4;<br>
+        sides = 200;<br>
+        for (n = [0:delta_1:delta_switch])<br>
+        {<br>
+            height_i =  cutoff > funct(n) ? funct(n) : cutoff;<br>
+            height_o = cutoff > funct(n+delta_1) ? funct(n+delta_1) : cutoff;<br>
+            h_1 = height_i<height_o ? height_i : height_o;<br>
+            h_2 = height_i>height_o ? height_i : height_o;<br>
+            rad_1 = height_i<height_o ? n : n+delta_1;<br>
+            rad_2 = height_i>height_o ? n : n+delta_1;<br>
+            
+            translate([0,0,6]) <br>
+            difference(){<br>
+                union() {<br>
+                    cylinder(h = h_1,r=n, center = false, $fn=sides);<br>
+                    translate([0,0,h_1]) cylinder(h = h_2-h_1, r1 = rad_1, r2 = rad_2,$fn=sides);<br>
+                }<br>
+            cylinder(h=height_o+1,r=(n-delta_1),center=false,$fn=sides);<br>
+            }<br>
+        }<br>
+
+        for (n = [delta_switch:delta_2:40])<br>
+        {<br>
+            height_i =  cutoff > funct(n) ? funct(n) : cutoff;<br>
+            height_o = cutoff > funct(n+delta_2) ? funct(n+delta_2) : cutoff;<br>
+            h_1 = height_i<height_o ? height_i : height_o;<br>
+            h_2 = height_i>height_o ? height_i : height_o;<br>
+            rad_1 = height_i<height_o ? n : n+delta_2;<br>
+            rad_2 = height_i>height_o ? n : n+delta_2;<br>
+            
+            translate([0,0,6]) <br>
+            difference(){<br>
+                union() {<br>
+                    cylinder(h = h_1,r=n, center = false, $fn=sides);<br>
+                    translate([0,0,h_1]) cylinder(h = h_2-h_1, r1 = rad_1, r2 = rad_2,$fn=sides);<br>
+                }<br>
+            cylinder(h=height_o+1,r=(n-delta_2),center=false,$fn=sides);<br>
+            }<br>
+        }<br>
+
+        //makes the wave buffer around the edge<br>
+        buffer = .2;<br>
+        translate([0,0,6-buffer]) difference(){<br>
+            cylinder(h = cutoff,r=40, center = false, $fn=sides);<br>
+            cylinder(h=cutoff+1,r=27.5,center=false,$fn=sides);<br>
+        }<br>
+
+        //This function is the bottom shape, x in mm from the center<br>
+        function funct(x) = (30/x);<br>
+
+    </code>
+    <figcaption>
+        Code for the previous picture, writen by author.
+    </figcaption><br>
+    
+<script>
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
+</script>
+
+</body>
+</html>
